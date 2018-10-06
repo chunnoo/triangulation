@@ -5,12 +5,14 @@ attribute vec2 vTexCoord;
 
 uniform mat4 mvpMatrix;
 uniform vec3 lightVec;
+uniform float time;
 
 varying vec4 fColor;
 varying vec2 fTexCoord;
 void main(void) {
   fColor = vec4(vColor.rgb*dot(vNorm, lightVec), vColor.a);
   fTexCoord = vTexCoord;
+  float t = time;
   gl_Position = vec4(vCoord, 1.0) * mvpMatrix;
 }
 `;

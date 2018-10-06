@@ -47,5 +47,11 @@ Vec3.prototype = {
     let dz = this.x*Math.sin(r) + this.z*Math.cos(r);
     this.x = dx;
     this.z = dz;
+  },
+  xyDist: function(v) {
+    return Math.sqrt(Math.pow(this.x - v.x, 2) + Math.pow(this.y - v.y, 2));
+  },
+  translate: function(x, y, z) {
+    return new Vec3(this.x + x, this.y + y, this.z + z);
   }
 }
